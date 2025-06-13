@@ -1,23 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Open URL</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Overlay Button on Image</title>
+<!-- Include Google Fonts in your head -->
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<style>
+  /* Make the page take full height and remove margins */
+  body, html {
+    font-family: 'Pacifico', cursive;
+    height: 100%;
+    margin: 0;
+  }
+  
+  /* Container with background image */
+   .background-container {
+    height: 100vh; /* full viewport height */
+    width: 100%;
+    background-image: url('https://i.postimg.cc/9fW1MVYn/banned-1.png'); /* your image URL */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain; /* show entire image without zooming/cropping */
+    background-color: black; /* fallback color if image doesn't fill the space */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+
+  /* Overlay button positioned over the image */
+  .overlay-button {
+    position: absolute;
+    width: 75%;
+    bottom: 14px; /* distance from bottom */
+    left: 50%; /* center horizontally */
+    transform: translateX(-50%);
+    padding: 15px 30px;
+    font-size: 1;
+    font-family: sans-serif;
+    background-color: #111111; /* Bootstrap blue color */
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+</style>
 </head>
 <body>
-  <script>
-    // Parse URL parameter
-    const params = new URLSearchParams(window.location.search);
-    const url = params.get('id');
 
-    if (url) {
-      // Optionally, validate URL here
-      // Redirect or open in new tab
-      window.location.href = url; // Opens in the same tab
-      // Or
-      // window.open(url, '_blank'); // Opens in new tab
-    } else {
-      document.body.innerText = 'No URL provided.';
-    }
-  </script>
+<div class="background-container">
+  <button class="overlay-button" <button class="overlay-button" onclick="window.location.href='https://www.instagram.com/accounts/login/'">
+  Log Into Another Account
+</button>>
+Log Into Another Account</button>
+</div>
+
 </body>
 </html>
